@@ -9,7 +9,7 @@ use Kreait\Firebase\Messaging\Notification as MessagingNotification;
 class CloudMessaging
 {
     protected $factory;
-    protected $cloudMEssaging;
+    protected $cloudMessaging;
     protected $notification;
     protected $topic;
     protected $additional_data;
@@ -33,7 +33,7 @@ class CloudMessaging
     public function setTopic(string $topic): self
     {
 
-        $this->topic = $topic[0];
+        $this->topic = $topic;
         return $this;
     }
 
@@ -47,6 +47,8 @@ class CloudMessaging
     {
         $message = CloudMessage::withTarget('topic', $this->topic)
             ->withNotification($this->notification)
-            ->withData($this->additional_data)->send();
+            ->withData($this->additional_data);
+
+        return $this->cloudMessaging->send($message);
     }
 }

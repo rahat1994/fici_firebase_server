@@ -14,7 +14,7 @@ if ($_POST['intent'] == 'fici_notification') {
     $result = $messaging
         ->setNotification($_POST['title'], $_POST['body'])
         ->setTopic($_POST['topic'])
-        ->setData($_POST['data'])
+        ->setData(['notification_sub' => $_POST['intent'] . $_POST['data']])
         ->send();
 
     header('Content-Type: application/json');
