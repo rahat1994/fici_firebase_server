@@ -1,0 +1,17 @@
+{
+    "name": "rahat/fici_firebase_server",
+    "autoload": {
+        "psr-4": {
+            "Rahat\\FiciFirebaseServer\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Rahat",
+            "email": "rahat392@gmail.com"
+        }
+    ],
+    "require": {
+        "kreait/firebase-php": "^5.23"
+    }
+}
